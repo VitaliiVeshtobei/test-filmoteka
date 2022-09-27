@@ -1,0 +1,47 @@
+.header {
+  width: 1280px;
+  height: 216px;
+
+  background: url(../images/abstract-background-with-red-lines\ 1.png);
+  background-size: cover;
+  opacity: 0.9;
+}
+
+.logo {
+  font-family: Raleway, sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  color: #ffffff;
+  line-height: 1.2;
+  text-decoration: none;
+}
+.link-list {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  text-transform: uppercase;
+}
+.link-item {
+}
+.link-item:not(:last-child) {
+  margin-right: 40px;
+}
+.link-header {
+  color: #ffffff;
+  text-decoration: none;
+}
+.container-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  padding: 40px;
+}
+
+.search-form {
+  text-align: center;
+}
