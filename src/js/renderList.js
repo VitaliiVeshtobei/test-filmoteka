@@ -1,10 +1,7 @@
 import axios from 'axios';
 import genres from '../genres.json';
-console.log(genres);
-// const genresFiltered = genres.filter(genre => {
-//   return genre.id.includes('card.id');
-// });
-// console.log(genresFiltered);
+import { onClickCard } from '..';
+
 const gallery = document.querySelector('.card-list');
 
 export function renderGallery(data) {
@@ -19,11 +16,11 @@ export function renderGallery(data) {
         .filter(genreItem => {
           return genreItem !== undefined;
         });
-      console.log(genre);
-      return `<li>
+
+      return `<li >
       <img src="https://image.tmdb.org/t/p/w500/${[card.backdrop_path]}" alt="${
         card.title
-      }"/>
+      }" data-id="${card.id}"/>
   <p>${card.title}<p/>
   <p>${genre} | ${card.release_date}<p/>
 </li>`;
