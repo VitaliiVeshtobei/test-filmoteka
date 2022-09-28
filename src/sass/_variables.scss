@@ -1,0 +1,21 @@
+:root {
+  --primary-text-color: #fff;
+  --primary-text-color-dark: #000;
+  --secondary-text-color: #545454;
+  --notification-text-color: #ff001b;
+  --accent-text-color: #ff6b08;
+  --bg-color: #e5e5e5;
+  --bg-color-header: rgba(0, 0, 0, 0.56);
+  --btn-accent-color: #ff6b01;
+  --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+$base-font: Roboto, sans-serif;
+
+$font-paragraph: 12px;
+
+$mobile: 480px;
+$max-mob: 767px;
+$tablet: 768px;
+$max-tabley: 1279px;
+$desktop: 1280px;
