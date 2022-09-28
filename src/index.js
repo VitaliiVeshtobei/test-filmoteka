@@ -20,8 +20,9 @@ export async function onSubmitForm(evt) {
 export async function onClickCard(evt) {
   console.log(evt.target.dataset.id);
   const cardId = evt.target.dataset.id;
-
-  const responseCardDetails = await getApiDetails(cardId);
-  console.log(responseCardDetails.data);
-  modal(responseCardDetails.data);
+  if (cardId) {
+    const responseCardDetails = await getApiDetails(cardId);
+    console.log(responseCardDetails.data);
+    modal(responseCardDetails.data);
+  }
 }

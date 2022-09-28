@@ -17,13 +17,14 @@ export function renderGallery(data) {
           return genreItem !== undefined;
         });
 
-      return `<li >
+      return `
+      <li data-id="${card.id}">
       <img src="https://image.tmdb.org/t/p/w500/${[card.backdrop_path]}" alt="${
         card.title
       }" data-id="${card.id}"/>
-  <p>${card.title}<p/>
-  <p>${genre} | ${card.release_date}<p/>
-</li>`;
+        <p>${card.title}<p/>
+        <p>${genre} | ${card.release_date}<p/>
+    </li>`;
     })
     .join('');
   gallery.insertAdjacentHTML('beforeend', markupGallery);
