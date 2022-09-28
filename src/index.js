@@ -3,11 +3,11 @@ import { renderGallery } from './js/renderList';
 import { getApiDetails } from './js/modal';
 import { modal } from './js/modal';
 import axios from 'axios';
-const cardList = document.querySelector('.card-list');
+// const cardList = document.querySelector('.card-list');
 const form = document.querySelector('.search-form');
 
 form.addEventListener('submit', onSubmitForm);
-cardList.addEventListener('click', onClickCard);
+// cardList.addEventListener('click', onClickCard);
 
 export async function onSubmitForm(evt) {
   evt.preventDefault();
@@ -17,12 +17,11 @@ export async function onSubmitForm(evt) {
   renderGallery(response.data.results);
 }
 
-export async function onClickCard(evt) {
-  console.log(evt.target.dataset.id);
-  const cardId = evt.target.dataset.id;
-  if (cardId) {
-    const responseCardDetails = await getApiDetails(cardId);
-    console.log(responseCardDetails.data);
-    modal(responseCardDetails.data);
-  }
-}
+// export async function onClickCard(evt) {
+//   const cardId = evt.target.dataset.id;
+//   if (cardId) {
+//     const responseCardDetails = await getApiDetails(cardId);
+//     console.log(responseCardDetails.data);
+//     modal(responseCardDetails.data);
+//   }
+// }

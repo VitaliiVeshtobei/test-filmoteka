@@ -15,15 +15,19 @@ export function renderGallery(data) {
         })
         .filter(genreItem => {
           return genreItem !== undefined;
-        });
+        })
+        .join(', ');
 
       return `
       <li data-id="${card.id}">
-      <img src="https://image.tmdb.org/t/p/w500/${[card.backdrop_path]}" alt="${
+      <img  src="https://image.tmdb.org/t/p/w500/${[card.poster_path]}" alt="${
         card.title
       }" data-id="${card.id}"/>
-        <p>${card.title}<p/>
-        <p>${genre} | ${card.release_date}<p/>
+       
+       <h2 data-id="${card.id}">${card.title}</h2>
+        <p data-id="${card.id}">${genre.length ? genre : 'Unknown'} | ${
+        card.release_date
+      } </p>
     </li>`;
     })
     .join('');
