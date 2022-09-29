@@ -2,7 +2,7 @@ import axios from 'axios';
 import genres from '../genres.json';
 import { onClickCard } from '..';
 
-const gallery = document.querySelector('.card-list');
+const gallery = document.querySelector('.card__list');
 
 export function renderGallery(data) {
   const markupGallery = data
@@ -19,7 +19,7 @@ export function renderGallery(data) {
         .join(', ');
 
       return `
-      <li data-id="${card.id}">
+      <li class="card__item" data-id="${card.id}">
       <img  src="https://image.tmdb.org/t/p/w500/${[card.poster_path]}" alt="${
         card.title
       }" data-id="${card.id}"/>
@@ -31,5 +31,5 @@ export function renderGallery(data) {
     </li>`;
     })
     .join('');
-  gallery.insertAdjacentHTML('beforeend', markupGallery);
+  gallery.innerHTML = markupGallery;
 }
