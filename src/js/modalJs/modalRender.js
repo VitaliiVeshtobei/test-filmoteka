@@ -1,3 +1,5 @@
+import { onClickModal } from './modalListeners';
+import { keyDown } from './modalListeners';
 const container = document.querySelector('.container');
 
 export function modal(data) {
@@ -8,7 +10,7 @@ export function modal(data) {
             <div class="modal">
             <button class="modal-btn" type="button" data-modal-close>
           <svg class="modal-btn__icon" width="30" height="30">
-            <use href="./image/icons.svg#close">
+            <use href="">
             </use>
           </svg>
         </button>
@@ -23,16 +25,16 @@ export function modal(data) {
                        <p class="modal-info__text--description"> Vote / Votes</p>
                     <p class="modal-info__text--meaning"><span class=" film__rating--orange">${data.vote_average}</span>
                      <span class="film__rating--divider"> / </span>
-                    <span class="film__rating--grey">${data.vote_count}</span></p>     
+                    <span class="film__rating--grey">${data.vote_count}</span></p>
                  </li>
                 <li class="modal-info__text">
-                    <p class="modal-info__text--description">Popularity</p> 
+                    <p class="modal-info__text--description">Popularity</p>
                     <p class="modal-info__text--meaning">${data.popularity}</p></li>
                 <li class="modal-info__text">
                     <p class="modal-info__text--description">Original Title</p><p class="modal-info__text--meaning">${data.original_title}</p></li>
                 <li class="modal-info__text">
                     <p class="modal-info__text--description">Genre</p><p class="modal-info__text--meaning">${genre}</p>
-              
+
             </li>
                 </ul>
                 </div>
@@ -45,11 +47,11 @@ export function modal(data) {
            <button type="button" class="info-btn queue-btn">add to queue</button>
            </div>
         </div>
-        
+
     </div></div>`;
 
   container.insertAdjacentHTML('afterbegin', modalMarckUp);
-  // const modalOverlay = document.querySelector('.backdrop');
-  // modalOverlay.addEventListener('click', onClickModal);
-  // document.addEventListener('keydown', keyDown);
+  const modalOverlay = document.querySelector('.backdrop');
+  modalOverlay.addEventListener('click', onClickModal);
+  document.addEventListener('keydown', keyDown);
 }
