@@ -10,7 +10,7 @@ export function modal(data) {
             <div class="modal">
             <button class="modal-btn" type="button" data-modal-close>
           <svg class="modal-btn__icon" width="30" height="30">
-            <use href="./image/icons.svg#close">
+            <use href="">
             </use>
           </svg>
         </button>
