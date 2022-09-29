@@ -1,7 +1,7 @@
-import { modal } from './modalRenderJs';
+import { modal } from './modalRender';
 import { getApiDetails } from './getFilmDetails';
 
-const cardList = document.querySelector('.card-list');
+const cardList = document.querySelector('.card__list');
 cardList.addEventListener('click', onClickCard);
 
 export async function onClickCard(evt) {
@@ -17,17 +17,19 @@ export async function onClickCard(evt) {
   }
 }
 
-function onClickModal(evt) {
+export function onClickModal(evt) {
   console.log(evt.target);
   const modalOverlay = document.querySelector('.backdrop');
+  modalOverlay.addEventListener('click', onClickModal);
   if (evt.target === modalOverlay) {
     modalOverlay.remove();
     document.removeEventListener('keydown', keyDown);
   }
 }
 
-function keyDown(evt) {
+export function keyDown(evt) {
   const modalOverlay = document.querySelector('.backdrop');
+  document.addEventListener('keydown', keyDown);
   if (evt.key === 'Escape') {
     modalOverlay.remove();
     document.removeEventListener('keydown', keyDown);
